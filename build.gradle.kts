@@ -63,16 +63,17 @@ subprojects {
 
     if (System.getenv("MODRINTH") != null && project.name != "Common") {
         apply(plugin = "com.modrinth.minotaur")
-
-        modrinth {
-            token = System.getenv("MODRINTH")
-            projectId = "3TMQS50Y"// The ID of your modrinth project, slugs will not work.
-            versionNumber = "" + version // The version of the mod to upload.
-            versionType = if (project.name == "Fabric") "release" else "alpha"
-            uploadFile = if (project.name == "Fabric") tasks.get("remapJar") else tasks.jar
-            gameVersions.add(minecraftVersion)
-            changelog = System.getenv("CHANGELOG")
-            loaders.add(project.name.toDefaultLowerCase())
+        afterEvaluate {
+            modrinth {
+                token = System.getenv("MODRINTH")
+                projectId = "3TMQS50Y"// The ID of your modrinth project, slugs will not work.
+                versionNumber = "" + version // The version of the mod to upload.
+                versionType = if (project.name == "Fabric") "release" else "alpha"
+                uploadFile = if (project.name == "Fabric") tasks.get("remapJar") else tasks.jar
+                gameVersions.add(minecraftVersion)
+                changelog = System.getenv("CHANGELOG")
+                loaders.add(project.name.toDefaultLowerCase())
+            }
         }
     }
 }

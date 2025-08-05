@@ -5,7 +5,7 @@
   "name": "${modName}",
   "description": "${modDescription}",
   "authors": [
-    "${modAuthor}"
+    ${modAuthorFabric}
   ],
   "contact": {
     "homepage": "${modHomeUrl}",
@@ -25,7 +25,7 @@
   ],
   "depends": {
     "fabricloader": ">=${fabricLoaderVersion}",
-    "fabric": ">=${fabricVersion}",
+    "fabric-api": "*",
     "minecraft": ">=${minecraftVersion}",
     "java": ">=${modJavaVersion}"
   },

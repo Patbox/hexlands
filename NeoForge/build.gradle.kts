@@ -1,5 +1,5 @@
 plugins {
-    id("net.neoforged.moddev") version "0.1.112"
+    id("net.neoforged.moddev") version "2.0.106"
 }
 
 val modId: String by extra
@@ -9,20 +9,23 @@ val neoForgeVersion: String by extra
 val parchmentVersion: String by extra
 val parchmentMinecraftVersion: String by extra
 
-base {
-    archivesName.set("${modId}-neoforge-${minecraftVersion}")
-}
-
 dependencies {
     compileOnly(project(":Common"))
 }
 
+base {
+    archivesName.set(modId)
+}
+
 neoForge {
-    version.set(neoForgeVersion)
+    version = neoForgeVersion
 
     // Use the access transformer from the :Common project
-    accessTransformers.add(project(":Common").file("src/main/resources/META-INF/accesstransformer.cfg").absolutePath)
 
+    val at = project(":Common").file("src/main/resources/META-INF/accesstransformer.cfg")
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
     parchment {
         minecraftVersion.set(parchmentMinecraftVersion)
         mappingsVersion.set(parchmentVersion)

@@ -1,6 +1,6 @@
 ![Hex Lands](./img/splash.png)
 
-This mod is an updated and rewritten version of the original [Hex Lands](https://www.curseforge.com/minecraft/mc-mods/hex-lands) mod by superfluke, et. al. It has been rewritten completely for new Minecraft versions.
+This mod is an updated version of [Hex Lands](https://modrinth.com/mod/hexlands) mod by superfluke, updated through 1.16 to 1.12.1 by alcatrazEscapee.
 
 ### Features
 
@@ -9,14 +9,8 @@ This mod is an updated and rewritten version of the original [Hex Lands](https:/
 - Automatic compatibility with mods that add biomes to the overworld or other world generation.
 - Many options for world customization via data packs.
 
-### Configuration (Data Packs - 1.21)
-
-**Note:** Due to Mojang's changes to world generation, configuration will be different depending on which Minecraft version you are using!
-
-- For [1.19 - 1.21](https://github.com/alcatrazEscapee/hexlands/blob/1.21.x/README.md#configuration-data-packs)
-- For [1.18](https://github.com/alcatrazEscapee/hexlands/blob/1.18.x/README.md#configuration-data-packs)
-- For [1.17](https://github.com/alcatrazEscapee/hexlands/blob/1.17.x/README.md#configuration-data-packs)
-- For [1.16](https://github.com/alcatrazEscapee/hexlands/blob/1.16.x/README.md#configuration-data-packs)
+### Configuration
+- For [1.21.8+](https://github.com/patbox/hexlands/blob/1.21.x/README.md#configuration-data-packs)
 
 Worlds are specified by [World Presets](https://minecraft.wiki/w/World_preset). HexLands can be customized by adding a new world preset, which uses the `hexlands:hexlands` chunk generator. The hexlands chunk generator has the following fields:
 
@@ -53,15 +47,5 @@ Worlds are specified by [World Presets](https://minecraft.wiki/w/World_preset). 
 
 ![Overworld Hexes](./img/hex_overworld.png)
 ![Nether Hexes](./img/hex_nether.png)
-
-With [Oh The Biomes You'll Bo](https://www.curseforge.com/minecraft/mc-mods/oh-the-biomes-youll-go):
-
-![BYG Overworld Hexes](./img/hex_overworld_byg.png)
-![BYG Nether Hexes](./img/hex_nether_byg.png)
-![BYG End Hexes](./img/hex_end_byg.png)
-
-With [Biomes O Plenty](https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty)
-
-![Biomes O Plenty Overworld Hexes](./img/hex_overworld_bop.png)
 
 

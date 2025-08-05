@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom") version "1.7.1"
+    id("fabric-loom") version "1.10.+"
 }
 
 val modId: String by extra
@@ -12,7 +12,7 @@ val fabricVersion: String by extra
 val fabricLoaderVersion: String by extra
 
 base {
-    archivesName.set("${modId}-fabric-${minecraftVersion}")
+    archivesName.set(modId)
 }
 
 dependencies {

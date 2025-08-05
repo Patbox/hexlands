@@ -79,14 +79,14 @@ public class HexChunkGenerator extends NoiseBasedChunkGenerator
                 final Block block = chunk.getBlockState(cursor.setY(y)).getBlock();
                 if (block != Blocks.BEDROCK)
                 {
-                    chunk.setBlockState(cursor, placed.borderMinState, false);
+                    chunk.setBlockState(cursor, placed.borderMinState);
                 }
             }
 
             // Between Borders
             for (int y = placed.borderMinY + 1; y < placed.borderMaxY; y++)
             {
-                chunk.setBlockState(cursor.setY(y), Blocks.AIR.defaultBlockState(), false);
+                chunk.setBlockState(cursor.setY(y), Blocks.AIR.defaultBlockState());
             }
 
             // Top Border
@@ -95,7 +95,7 @@ public class HexChunkGenerator extends NoiseBasedChunkGenerator
                 final Block block = chunk.getBlockState(cursor.setY(y)).getBlock();
                 if (block != Blocks.BEDROCK)
                 {
-                    chunk.setBlockState(cursor, placed.borderMaxState, false);
+                    chunk.setBlockState(cursor, placed.borderMaxState);
                 }
             }
         });

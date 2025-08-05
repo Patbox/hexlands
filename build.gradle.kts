@@ -62,6 +62,8 @@ subprojects {
     }
 
     if (System.getenv("MODRINTH") != null && project.name != "Common") {
+        apply(plugin = "com.modrinth.minotaur")
+
         modrinth {
             token = System.getenv("MODRINTH")
             projectId = "3TMQS50Y"// The ID of your modrinth project, slugs will not work.

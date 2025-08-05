@@ -2,6 +2,7 @@ import org.gradle.internal.extensions.stdlib.toDefaultLowerCase
 
 plugins {
     id("java")
+    id("maven-publish")
     id("com.modrinth.minotaur") version "2.+"
 }
 

@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom") version "1.10.+"
+    id("fabric-loom") version "1.11.+"
 }
 
 val modId: String by extra

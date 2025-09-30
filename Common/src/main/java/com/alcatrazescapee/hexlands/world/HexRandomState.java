@@ -50,7 +50,7 @@ public record HexRandomState(RandomState state, NoiseRouter hexRouter, Climate.S
                     sampleHexCenter(hexSettings, router.erosion()),
                     sampleHexCenter(hexSettings, router.depth()),
                     sampleHexCenter(hexSettings, router.ridges()),
-                    router.initialDensityWithoutJaggedness().mapAll(visitor),
+                    router.preliminarySurfaceLevel().mapAll(visitor),
                     router.finalDensity().mapAll(visitor),
                     router.veinToggle(),
                     router.veinRidged(),

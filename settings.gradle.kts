@@ -10,7 +10,8 @@ pluginManagement {
             }
 
         exclusiveMaven("https://maven.fabricmc.net") {
-            includeGroup("net.fabricmc")
+            includeGroupAndSubgroups("net.fabricmc")
+            includeGroup("net.fabricmc.unpick")
             includeGroup("fabric-loom")
         }
         exclusiveMaven("https://maven.neoforged.net/releases") {

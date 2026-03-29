@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "hexlands",
+  "version": "${version}",
+  "name": "HexLands",
+  "description": "Remakes the overworld, Settlers of Catan style.",
+  "authors": [
+    "AlcatrazEscapee", "Patbox"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/hexlands-updated",
+    "sources": "https://github.com/patbox/hexlands/issues"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.alcatrazescapee.hexlands.FabricHexLands"
+    ],
+    "client": [
+    ]
+  },
+  "mixins": [
+    "hexlands.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.2",
+    "fabric-api": "*",
+    "minecraft": ">=26.1-",
+    "java": ">=25"
+  },
+  "accessWidener": "hexlands.accesswidener"
+}

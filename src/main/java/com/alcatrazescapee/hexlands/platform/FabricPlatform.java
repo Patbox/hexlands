@@ -2,8 +2,6 @@ package com.alcatrazescapee.hexlands.platform;
 
 import net.fabricmc.fabric.impl.biome.MultiNoiseSamplerHooks;
 import net.minecraft.world.level.biome.Climate;
-import net.minecraft.world.level.levelgen.DensityFunction;
-import net.minecraft.world.level.levelgen.DensityFunctions;
 
 public final class FabricPlatform implements XPlatform
 {

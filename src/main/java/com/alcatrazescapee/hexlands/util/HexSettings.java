@@ -7,7 +7,7 @@ import com.alcatrazescapee.hexlands.HexLands;
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.DataResult;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -18,7 +18,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 
 public record HexSettings(double biomeScale, double hexSize, double hexBorderThreshold, Optional<BorderSettings> topBorder, Optional<BorderSettings> bottomBorder)
 {
-    private static final Map<ResourceLocation, HexSettings> DEFAULTS = new Object2ObjectOpenHashMap<>();
+    private static final Map<Identifier, HexSettings> DEFAULTS = new Object2ObjectOpenHashMap<>();
     private static final Codec<HexSettings> DIRECT_CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.doubleRange(0.01, 1000).optionalFieldOf("biome_scale", 8d).forGetter(c -> c.biomeScale),
             Codec.doubleRange(1, 1000).optionalFieldOf("hex_size", 40d).forGetter(c -> c.hexSize),
@@ -27,7 +27,7 @@ public record HexSettings(double biomeScale, double hexSize, double hexBorderThr
             BorderSettings.CODEC.optionalFieldOf("bottom_border").forGetter(c -> c.bottomBorder)
     ).apply(instance, HexSettings::new));
 
-    public static final Codec<HexSettings> CODEC = Codec.either(ResourceLocation.CODEC, DIRECT_CODEC).comapFlatMap(
+    public static final Codec<HexSettings> CODEC = Codec.either(Identifier.CODEC, DIRECT_CODEC).comapFlatMap(
         e -> e.map(
             l -> Optional.ofNullable(HexSettings.DEFAULTS.get(l))
                 .map(DataResult::success)
@@ -44,7 +44,7 @@ public record HexSettings(double biomeScale, double hexSize, double hexBorderThr
 
     private static void register(String id, HexSettings settings)
     {
-        DEFAULTS.put(ResourceLocation.fromNamespaceAndPath(HexLands.MOD_ID, id), settings);
+        DEFAULTS.put(Identifier.fromNamespaceAndPath(HexLands.MOD_ID, id), settings);
     }
 
     public record BorderSettings(int minHeight, int maxHeight, BlockState state)

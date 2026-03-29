@@ -116,7 +116,7 @@ public class HexChunkGenerator extends NoiseBasedChunkGenerator
         final Hex hex = Hex.blockToHex(pos.getX() * hexScale, pos.getZ() * hexScale, hexSize);
         final PlacedHex placed = placeHex(hex, state, null, pos.getY());
 
-        tooltips.add(String.format("Hex (%d, %d) at %s : H%d B%d-%d", hex.q(), hex.r(), placed.biome().unwrap().map(ResourceKey::location, e -> "[unregistered biome]"), (int) placed.preliminaryHeight, placed.borderMinY, placed.borderMaxY));
+        tooltips.add(String.format("Hex (%d, %d) at %s : H%d B%d-%d", hex.q(), hex.r(), placed.biome().unwrap().map(ResourceKey::identifier, e -> "[unregistered biome]"), (int) placed.preliminaryHeight, placed.borderMinY, placed.borderMaxY));
         super.addDebugScreenInfo(tooltips, state, pos);
     }
 

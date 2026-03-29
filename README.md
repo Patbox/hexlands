@@ -1,6 +1,6 @@
 ![Hex Lands](./img/splash.png)
 
-This mod is an updated version of [Hex Lands](https://modrinth.com/mod/hexlands) mod by superfluke, updated through 1.16 to 1.12.1 by alcatrazEscapee.
+This mod is an updated version of [Hex Lands](https://modrinth.com/mod/hexlands) mod by superfluke, updated through 1.16 to 1.21.1 by alcatrazEscapee.
 
 ### Features
 

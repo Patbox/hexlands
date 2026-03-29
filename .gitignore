@@ -1,20 +1,43 @@
-*
-!*/
+# gradle
 
-!/.github/**/*.yml
+.gradle/
+build/
+out/
+classes/
 
-!/gradle/wrapper/gradle-wrapper.jar
-!/gradle/wrapper/gradle-wrapper.properties
+# eclipse
 
-!/**/build.gradle.kts
-!/**/src/**/*.*
+*.launch
 
-!/img/**/*.png
+# idea
 
-!/.gitignore
-!/gradle.properties
-!/gradlew
-!/gradlew.bat
-!/settings.gradle.kts
-!/LICENSE
-!/README.md
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+run/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+
+src/main/generated/

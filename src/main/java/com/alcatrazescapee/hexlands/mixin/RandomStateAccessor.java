@@ -14,7 +14,6 @@ public interface RandomStateAccessor
     @Accessor("router")
     void setRouter(NoiseRouter router);
 
-    @Mutable
     @Accessor
-    void setSampler(Climate.Sampler sampler);
+    NoiseRouter getRouter();
 }
